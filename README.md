@@ -4,7 +4,7 @@ This application automates the creation of unique email accounts for company emp
 
 ## Project Structure
 
-- **EmailAccount**: Manages individual email accounts, including email address and password creation, and displays account information.
-- **Company**: Manages the company’s email accounts, domain, and UUIDs.
-- **ReadCompany**: Handles loading (deserialization) of the company data from a binary file.
-- **WriteCompany**: Handles saving (serialization) of the company data to a binary file.
+- **`EmailAccount` class**: Manages individual email accounts, including email address and password creation, and displays account information.
+- **`Company` class**: Manages the company’s email accounts, domain, and UUIDs.
+- **`ReadCompany` class**: Handles loading (deserialization) of the company data from a binary file.
+- **`WriteCompany` class**: Handles saving (serialization) of the company data to a binary file.
