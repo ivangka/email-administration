@@ -15,7 +15,7 @@ public class EmailAccount implements Serializable {
     private String altEmailAddress;
     private String password;
     private Company company;
-    private long uuid;
+    private long id;
 
     public EmailAccount(Company company, Scanner sc) {
 
@@ -28,7 +28,7 @@ public class EmailAccount implements Serializable {
         System.out.print("PRINT YOUR ALTERNATIVE EMAIL ACCOUNT: ");
         this.altEmailAddress = sc.nextLine();
         createEmailAddress(firstName, lastName, company, sc);
-        this.uuid = company.createNewUUID();
+        this.id = company.createNewid();
         this.password = createPassword(company.getPasswordLength());
 
         System.out.println("\nNew email account has been created successfully!");
@@ -79,8 +79,8 @@ public class EmailAccount implements Serializable {
         return new String(password);
     }
 
-    public long getUuid() {
-        return this.uuid;
+    public long getid() {
+        return this.id;
     }
 
     public void showInfo() {
@@ -92,7 +92,7 @@ public class EmailAccount implements Serializable {
         formatter.format("%-19s%s\n", "EMAIL ADDRESS:", this.emailAddress);
         formatter.format("%-19s%s\n", "PASSWORD:", this.password);
         formatter.format("%-19s%s\n", "COMPANY:", this.company.getCompanyName());
-        formatter.format("%-19s%s\n", "UUID:", this.uuid);
+        formatter.format("%-19s%s\n", "id:", this.id);
         formatter.format("%-19s%s\n", "ALT EMAIL ADDRESS:", this.altEmailAddress);
 
     }

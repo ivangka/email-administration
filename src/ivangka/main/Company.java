@@ -11,7 +11,7 @@ public class Company implements Serializable {
     private String domain;
     private int passwordLength;
     private ArrayList<EmailAccount> emailAccounts;
-    private ArrayList<Long> allUUID;
+    private ArrayList<Long> allID;
 
     public Company(String companyName, String domain, int passwordLength) {
 
@@ -20,7 +20,7 @@ public class Company implements Serializable {
         this.domain = domain;
         this.passwordLength = passwordLength;
         this.emailAccounts = new ArrayList<>();
-        this.allUUID = new ArrayList<>();
+        this.allID = new ArrayList<>();
 
     }
 
@@ -28,24 +28,24 @@ public class Company implements Serializable {
         emailAccounts.add(emailAccount);
     }
 
-    public long createNewUUID() {
+    public long createNewid() {
 
-        long uuid;
+        long id;
         Random rand = new Random(47);
 
-        // create unique UUID for the account
+        // create unique id for the account
         do {
-            uuid = rand.nextLong((long) Math.pow(10, 10));
-        } while (allUUID.contains(uuid));
+            id = rand.nextLong((long) Math.pow(10, 10));
+        } while (allID.contains(id));
 
-        // add new UUID in list
-        addUUID(uuid);
+        // add new id in list
+        addid(id);
 
-        return uuid;
+        return id;
     }
 
-    public void addUUID(long uuid) {
-        allUUID.add(uuid);
+    public void addid(long id) {
+        allID.add(id);
     }
 
     public String getDomain() {
